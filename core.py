@@ -93,12 +93,12 @@ It should give you a warning saying this is irrevocable, click "Yes, do it!"
 
 ---------
 
-Once these steps have been completed, on the top, you will see Secret: click to reveal
-Copy and paste the "Secret" into the API_KEY... e.x. API_KEY = 'ajglshaga;djahg;ajh148u124'
+Once these steps have been completed, on the top, you will see Token: click to reveal
+Copy and paste the "TOKEN" into the API_KEY... e.x. API_KEY = 'ajglshaga;djahg;ajh148u124'
 
 Boom, you are all done, congratulations!
 '''
 
 
-API_KEY = ''
-client.run(API_KEY)
+API_KEY = 'MjQzMjE3OTQwNTQ2MTkxMzYw.CvsE3A.cwyU8BTUaFGl24f7dnD8kZIeEO0'
+client.run('')
