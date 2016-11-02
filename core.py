@@ -32,22 +32,26 @@ async def on_message(message):
                 await client.send_message(message.channel, 'PONG!')
         # This Command is an Example of User Choice, We Will Allow The User To Choose There Choice And We Give Them an Output Based on There Input Given.
         if message.content.startswith('gamble '):
-                # Making There Message Into This '' Which is There Input.
-                message = message.content.replace('gamble ', '')
-                # Making There Message From A String To An Integer.
-                userinput = int(message)
-                # Making The User Input Back Into A String
-                tocall = str(userinput)
-                # Generating a Number and Putting it into a Variable Called "generatedNumber".
-                generatedNumber = random.randint(1, 10)
-                # And if check...
-                if userinput == generatedNumber:
-                        # So If The User's Input Equals To The GeneratedNumber, We Tell Them They Win.
-                        await client.send_message(message.channel, 'You Win! Your Answer Was: ' + tocall)
-                else:
-                        # If it doesn't equal the generated number, they lose.
-                        await client.send_message(message.channel, 'You Lose! Your Answe Was: ' + tocall)
+                # Alright, we are going to first send them a message saying to pick a number between 1 through 10
+                await client.send_message(message.channel, 'Picking a number between 1 through 10... Let us see what you get!')
+                answer = message.content.replace('gamble ', '')
+                # Replace the content of there message to '' to call easier
+                generatedNumber = random.randint(1,10)
+                # Generate a Random Number
+                await asyncio.sleep(3)
+                # A 3 Second wait Period
+                try:
+                # If There Answer == generatedNumber Then They Win! Else, They Lose.
+                    if int(answer) == generatedNumber:
+                            await client.send_message(message.channel, "You Win! The Number Was " + str(generatedNumber))
+                    else:
+                            await client.send_message(message.channel, "You Lose! The Number Was " + str(generatedNumber))
+                except ValueError:
+                        # If It is This Certain Error, Which Occurs When They Input A String E.x. gamble agdhlaga This Happens:
+                        await client.send_message(message.channel, "Please enter a valid number or try again later...")
+                        
 
+                                                                          
 
 '''
 Here is the final step, you must go to discordapp.com
@@ -102,3 +106,5 @@ Boom, you are all done, congratulations!
 
 API_KEY = 'MjQzMjE3OTQwNTQ2MTkxMzYw.CvsE3A.cwyU8BTUaFGl24f7dnD8kZIeEO0'
 client.run(API_KEY)
+
+                
