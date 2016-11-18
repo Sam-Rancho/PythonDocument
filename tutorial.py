@@ -49,6 +49,12 @@ async def on_message(message):
                 except ValueError:
                         # If It is This Certain Error, Which Occurs When They Input A String E.x. gamble agdhlaga This Happens:
                         await client.send_message(message.channel, "Please enter a valid number or try again later...")
+        if message.content.startswith('spin'):
+                gamble = random.randint(1, 6)
+                if gamble == 6:
+                        await client.send_message(message.channel, 'you got shot, rip...')
+                else:
+                        await client.send_message(message.channel, 'you are safe, gg!')
                         
 
                                                                           
@@ -104,7 +110,7 @@ Boom, you are all done, congratulations!
 '''
 
 
-API_KEY = 'MjQzMjE3OTQwNTQ2MTkxMzYw.CvsE3A.cwyU8BTUaFGl24f7dnD8kZIeEO0'
+API_KEY = ''
 client.run(API_KEY)
 
                 
