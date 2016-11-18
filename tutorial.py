@@ -5,8 +5,6 @@ import random
 '''
 Discord API Wrapper Example
 
-Copyright License: You may use this in anyway possible, this document is free to use for educational purposes ONLY.
-
 https://github.com/Sam-Rancho/PythonDocument
 
 Todo In Class:
@@ -112,5 +110,4 @@ Boom, you are all done, congratulations!
 
 API_KEY = ''
 client.run(API_KEY)
-#i made a change
                 
